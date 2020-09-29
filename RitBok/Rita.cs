@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization.Configuration;
+using HistoryCollections;
 
 namespace RitBok
 {
@@ -45,15 +38,21 @@ namespace RitBok
 
         Bitmap image;
 
+        Bitmap origianlImage;
+
         DrawTool toolMethod;
+
+        History<Bitmap> bitmapHistory = new History<Bitmap>(1000);
 
         ClickState currentClickState = ClickState.Non;
         MoveOrClick moveOrClick = MoveOrClick.Click;
         private void RitClass_Load(object sender, EventArgs e)
         {
             image = new Bitmap(692, 516);
+            origianlImage = (Bitmap)image.Clone();
             tbxStorlek.Text = "15";
             tbxBrushSize.Text = "15";
+            BtnLinje_Click(null, null);
         }
 
 
@@ -176,6 +175,8 @@ namespace RitBok
         public void UpdatePbx()
         {
             pbxMain.Image = image;
+            bitmapHistory.Add((Bitmap)image.Clone());
+            Console.WriteLine(bitmapHistory.current);
         }
 
         private void BtnBytFärg_Click(object sender, EventArgs e)
@@ -220,6 +221,40 @@ namespace RitBok
                 pbxMain.MouseMove -= MoveDetect;
                 moveOrClick = MoveOrClick.Click;
             }
+            currentClickState = ClickState.Non;//It unselected the current tool, eg. Linje tool
+        }
+
+        private void BtnÅngra_Click(object sender, EventArgs e)
+        {
+            Bitmap imageItem;
+            if (bitmapHistory.Undo(out imageItem))
+            {
+                if (imageItem == null)
+                {
+                    image = origianlImage;
+                }
+                image = (Bitmap)imageItem.Clone();
+                pbxMain.Image = image;
+            }
+            Console.WriteLine(bitmapHistory.current);
+
+        }
+
+        private void BtnRedo_Click(object sender, EventArgs e)
+        {
+            Bitmap imageItem;
+            if (bitmapHistory.Redo(out imageItem))
+            {
+                image = (Bitmap)imageItem.Clone();
+                pbxMain.Image = image;
+            }
+            Console.WriteLine(bitmapHistory.current);
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine("sekund");
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BtnLinje = new System.Windows.Forms.Button();
             this.BtnRektangel = new System.Windows.Forms.Button();
             this.BtnEllips = new System.Windows.Forms.Button();
@@ -41,6 +42,8 @@
             this.pbxMain = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxBrushSize = new System.Windows.Forms.TextBox();
+            this.BtnRedo = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxColorView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMain)).BeginInit();
             this.SuspendLayout();
@@ -103,11 +106,12 @@
             this.BtnÅngra.TabIndex = 4;
             this.BtnÅngra.Text = "Ångra";
             this.BtnÅngra.UseVisualStyleBackColor = true;
+            this.BtnÅngra.Click += new System.EventHandler(this.BtnÅngra_Click);
             // 
             // tbxStorlek
             // 
             this.tbxStorlek.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxStorlek.Location = new System.Drawing.Point(87, 430);
+            this.tbxStorlek.Location = new System.Drawing.Point(113, 430);
             this.tbxStorlek.Name = "tbxStorlek";
             this.tbxStorlek.Size = new System.Drawing.Size(100, 23);
             this.tbxStorlek.TabIndex = 5;
@@ -116,7 +120,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 433);
+            this.label1.Location = new System.Drawing.Point(41, 433);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 6;
@@ -157,25 +161,44 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 461);
+            this.label2.Location = new System.Drawing.Point(8, 464);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.Size = new System.Drawing.Size(99, 17);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Brush Size";
+            this.label2.Text = "Pensel Storlek";
             // 
             // tbxBrushSize
             // 
             this.tbxBrushSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBrushSize.Location = new System.Drawing.Point(87, 461);
+            this.tbxBrushSize.Location = new System.Drawing.Point(113, 461);
             this.tbxBrushSize.Name = "tbxBrushSize";
             this.tbxBrushSize.Size = new System.Drawing.Size(100, 23);
             this.tbxBrushSize.TabIndex = 10;
+            // 
+            // BtnRedo
+            // 
+            this.BtnRedo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRedo.ForeColor = System.Drawing.Color.Red;
+            this.BtnRedo.Location = new System.Drawing.Point(29, 297);
+            this.BtnRedo.Name = "BtnRedo";
+            this.BtnRedo.Size = new System.Drawing.Size(144, 53);
+            this.BtnRedo.TabIndex = 12;
+            this.BtnRedo.Text = "Gör Om";
+            this.BtnRedo.UseVisualStyleBackColor = true;
+            this.BtnRedo.Click += new System.EventHandler(this.BtnRedo_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // RitClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 563);
+            this.Controls.Add(this.BtnRedo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxBrushSize);
             this.Controls.Add(this.pbxMain);
@@ -214,6 +237,8 @@
         private System.Windows.Forms.PictureBox pbxMain;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxBrushSize;
+        private System.Windows.Forms.Button BtnRedo;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
