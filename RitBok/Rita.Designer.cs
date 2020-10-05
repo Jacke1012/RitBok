@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.BtnLinje = new System.Windows.Forms.Button();
             this.BtnRektangel = new System.Windows.Forms.Button();
             this.BtnEllips = new System.Windows.Forms.Button();
@@ -43,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxBrushSize = new System.Windows.Forms.TextBox();
             this.BtnRedo = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxColorView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMain)).BeginInit();
             this.SuspendLayout();
@@ -187,12 +185,6 @@
             this.BtnRedo.UseVisualStyleBackColor = true;
             this.BtnRedo.Click += new System.EventHandler(this.BtnRedo_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // RitClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +230,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxBrushSize;
         private System.Windows.Forms.Button BtnRedo;
-        private System.Windows.Forms.Timer timer1;
     }
 }
 

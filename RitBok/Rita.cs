@@ -88,7 +88,6 @@ namespace RitBok
             }
 
             toolMethod.Invoke(this, e);
-
         }
 
         private void MoveDetect(object sender, MouseEventArgs e)
@@ -176,7 +175,7 @@ namespace RitBok
         {
             pbxMain.Image = image;
             bitmapHistory.Add((Bitmap)image.Clone());
-            Console.WriteLine(bitmapHistory.current);
+            //Console.WriteLine(bitmapHistory.current);
         }
 
         private void BtnBytFärg_Click(object sender, EventArgs e)
@@ -236,7 +235,7 @@ namespace RitBok
                 image = (Bitmap)imageItem.Clone();
                 pbxMain.Image = image;
             }
-            Console.WriteLine(bitmapHistory.current);
+            //Console.WriteLine(bitmapHistory.current);
 
         }
 
@@ -248,13 +247,8 @@ namespace RitBok
                 image = (Bitmap)imageItem.Clone();
                 pbxMain.Image = image;
             }
-            Console.WriteLine(bitmapHistory.current);
+            //Console.WriteLine(bitmapHistory.current);
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Console.WriteLine("sekund");
         }
     }
 }

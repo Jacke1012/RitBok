@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 
 namespace HistoryCollections
 {
@@ -35,16 +33,19 @@ namespace HistoryCollections
             else
             {
                 T[] tempArray = new T[size];
+                T tempObj = array[0];
                 for (int i = 0; i < current; i++)
                 {
                     tempArray[i] = array[i + 1];
                 }
                 array = tempArray;
                 array[current] = item;
+                if (tempObj is IDisposable)
+                {
+                	((IDisposable)tempObj).Dispose();
+                    Console.WriteLine("Dispose");
+                }
             }
-
-
-
         }
 
         public bool Undo(out T item)
@@ -90,6 +91,7 @@ namespace HistoryCollections
             if (tempObj is IDisposable)
             {
                 ((IDisposable)tempObj).Dispose();
+                Console.WriteLine("Dispose");
             }
         }
     }
