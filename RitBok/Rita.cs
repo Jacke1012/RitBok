@@ -42,7 +42,7 @@ namespace RitBok
 
         DrawTool toolMethod;
 
-        History<Bitmap> bitmapHistory = new History<Bitmap>(1000);
+        History<Bitmap> bitmapHistory = new History<Bitmap>(200);
 
         ClickState currentClickState = ClickState.Non;
         MoveOrClick moveOrClick = MoveOrClick.Click;
@@ -51,7 +51,6 @@ namespace RitBok
             image = new Bitmap(692, 516);
             origianlImage = (Bitmap)image.Clone();
             tbxStorlek.Text = "15";
-            tbxBrushSize.Text = "15";
             BtnLinje_Click(null, null);
         }
 
@@ -62,7 +61,7 @@ namespace RitBok
         public void ClickDetect(object sender, MouseEventArgs e)
         {
             size = float.Parse(tbxStorlek.Text);
-            pen.Width = float.Parse(tbxBrushSize.Text);
+            pen.Width = float.Parse(tbxStorlek.Text);
             switch (currentClickState)
             {
                 case ClickState.Non:
@@ -93,7 +92,7 @@ namespace RitBok
         private void MoveDetect(object sender, MouseEventArgs e)
         {
             size = float.Parse(tbxStorlek.Text);
-            pen.Width = float.Parse(tbxBrushSize.Text);
+            pen.Width = float.Parse(tbxStorlek.Text);
             switch (currentClickState)
             {
                 case ClickState.Non:

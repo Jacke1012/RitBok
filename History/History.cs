@@ -43,7 +43,7 @@ namespace HistoryCollections
                 if (tempObj is IDisposable)
                 {
                 	((IDisposable)tempObj).Dispose();
-                    Console.WriteLine("Dispose");
+                    //Console.WriteLine("Dispose");
                 }
             }
         }
@@ -91,7 +91,7 @@ namespace HistoryCollections
             if (tempObj is IDisposable)
             {
                 ((IDisposable)tempObj).Dispose();
-                Console.WriteLine("Dispose");
+                //Console.WriteLine("Dispose");
             }
         }
     }

@@ -39,8 +39,6 @@
             this.pbxColorView = new System.Windows.Forms.PictureBox();
             this.BtnBytFärg = new System.Windows.Forms.Button();
             this.pbxMain = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbxBrushSize = new System.Windows.Forms.TextBox();
             this.BtnRedo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxColorView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMain)).BeginInit();
@@ -62,7 +60,7 @@
             // 
             this.BtnRektangel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRektangel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.BtnRektangel.Location = new System.Drawing.Point(29, 93);
+            this.BtnRektangel.Location = new System.Drawing.Point(29, 82);
             this.BtnRektangel.Name = "BtnRektangel";
             this.BtnRektangel.Size = new System.Drawing.Size(144, 53);
             this.BtnRektangel.TabIndex = 1;
@@ -74,7 +72,7 @@
             // 
             this.BtnEllips.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEllips.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.BtnEllips.Location = new System.Drawing.Point(29, 164);
+            this.BtnEllips.Location = new System.Drawing.Point(29, 141);
             this.BtnEllips.Name = "BtnEllips";
             this.BtnEllips.Size = new System.Drawing.Size(144, 53);
             this.BtnEllips.TabIndex = 2;
@@ -86,7 +84,7 @@
             // 
             this.BtnPenna.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPenna.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.BtnPenna.Location = new System.Drawing.Point(29, 235);
+            this.BtnPenna.Location = new System.Drawing.Point(29, 200);
             this.BtnPenna.Name = "BtnPenna";
             this.BtnPenna.Size = new System.Drawing.Size(144, 53);
             this.BtnPenna.TabIndex = 3;
@@ -109,7 +107,7 @@
             // tbxStorlek
             // 
             this.tbxStorlek.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxStorlek.Location = new System.Drawing.Point(113, 430);
+            this.tbxStorlek.Location = new System.Drawing.Point(87, 445);
             this.tbxStorlek.Name = "tbxStorlek";
             this.tbxStorlek.Size = new System.Drawing.Size(100, 23);
             this.tbxStorlek.TabIndex = 5;
@@ -118,7 +116,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 433);
+            this.label1.Location = new System.Drawing.Point(15, 448);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 6;
@@ -155,24 +153,6 @@
             this.pbxMain.TabStop = false;
             this.pbxMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ClickDetect);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 464);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 17);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Pensel Storlek";
-            // 
-            // tbxBrushSize
-            // 
-            this.tbxBrushSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBrushSize.Location = new System.Drawing.Point(113, 461);
-            this.tbxBrushSize.Name = "tbxBrushSize";
-            this.tbxBrushSize.Size = new System.Drawing.Size(100, 23);
-            this.tbxBrushSize.TabIndex = 10;
-            // 
             // BtnRedo
             // 
             this.BtnRedo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,8 +171,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 563);
             this.Controls.Add(this.BtnRedo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbxBrushSize);
             this.Controls.Add(this.pbxMain);
             this.Controls.Add(this.BtnBytFärg);
             this.Controls.Add(this.pbxColorView);
@@ -227,8 +205,6 @@
         private System.Windows.Forms.PictureBox pbxColorView;
         private System.Windows.Forms.Button BtnBytFärg;
         private System.Windows.Forms.PictureBox pbxMain;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbxBrushSize;
         private System.Windows.Forms.Button BtnRedo;
     }
 }
