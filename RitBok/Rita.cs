@@ -118,7 +118,6 @@ namespace RitBok
             }
             DrawEllipse(sender, e);
         }
-
         public void DrawLine(object sender, MouseEventArgs e)
         {
             switch (currentClickState)
@@ -248,6 +247,14 @@ namespace RitBok
             }
             //Console.WriteLine(bitmapHistory.current);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Bitmap bitmap in bitmapHistory)
+            {
+                Console.WriteLine(bitmap.ToString());
+            }
         }
     }
 }

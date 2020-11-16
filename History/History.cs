@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace HistoryCollections
 {
-    public class History<T>
+    public class History<T> : IEnumerable<T>
     {
         private int size;
-        private T[] array;
+        public T[] array;
 
         public int current = -1;
 
         private bool hasUndon = false;
-        
+
+
+
+
+
         public History(int size)
         {
             this.size = size;
@@ -25,7 +31,7 @@ namespace HistoryCollections
                 hasUndon = false;
             }
 
-            if (current < size-1)
+            if (current < size - 1)
             {
                 current++;
                 array[current] = item;
@@ -42,7 +48,7 @@ namespace HistoryCollections
                 array[current] = item;
                 if (tempObj is IDisposable)
                 {
-                	((IDisposable)tempObj).Dispose();
+                    ((IDisposable)tempObj).Dispose();
                     //Console.WriteLine("Dispose");
                 }
             }
@@ -94,5 +100,67 @@ namespace HistoryCollections
                 //Console.WriteLine("Dispose");
             }
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new HistoryEnum<T>(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return new HistoryEnum<T>(this);
+        }
+
+        class HistoryEnum<T> : IEnumerator<T>
+        {
+            History<T> his;
+
+            public HistoryEnum(History<T> his)
+            {
+                this.his = his;
+            }
+            int pos = -1;
+            public T Current
+            {
+                get
+                {
+                    return his.array[pos];
+                }
+            }
+
+            object IEnumerator.Current
+            {
+                get
+                {
+                    return Current;
+                }
+            }
+
+            public void Dispose()
+            {
+            }
+
+            public bool MoveNext()
+            {
+                pos++;
+                if (pos < his.array.Length && his.array[pos] != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    Reset();
+                    return false;
+                }
+            }
+
+            public void Reset()
+            {
+                pos = -1;
+            }
+        }
     }
+
+
+    
 }

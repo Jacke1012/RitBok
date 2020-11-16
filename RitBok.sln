@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RitBok", "RitBok\RitBok.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryCollections", "History\HistoryCollections.csproj", "{0345043E-6BE0-4736-B292-30D302B8C864}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryTesting", "HistoryTesting\HistoryTesting.csproj", "{B385F6BA-1D49-498E-BB26-C97B0B938888}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0345043E-6BE0-4736-B292-30D302B8C864}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0345043E-6BE0-4736-B292-30D302B8C864}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0345043E-6BE0-4736-B292-30D302B8C864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B385F6BA-1D49-498E-BB26-C97B0B938888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B385F6BA-1D49-498E-BB26-C97B0B938888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B385F6BA-1D49-498E-BB26-C97B0B938888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B385F6BA-1D49-498E-BB26-C97B0B938888}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -40,6 +40,7 @@
             this.BtnBytFärg = new System.Windows.Forms.Button();
             this.pbxMain = new System.Windows.Forms.PictureBox();
             this.BtnRedo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxColorView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMain)).BeginInit();
             this.SuspendLayout();
@@ -165,11 +166,22 @@
             this.BtnRedo.UseVisualStyleBackColor = true;
             this.BtnRedo.Click += new System.EventHandler(this.BtnRedo_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(176, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(46, 27);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // RitClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 563);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnRedo);
             this.Controls.Add(this.pbxMain);
             this.Controls.Add(this.BtnBytFärg);
@@ -206,6 +218,7 @@
         private System.Windows.Forms.Button BtnBytFärg;
         private System.Windows.Forms.PictureBox pbxMain;
         private System.Windows.Forms.Button BtnRedo;
+        private System.Windows.Forms.Button button1;
     }
 }
 
