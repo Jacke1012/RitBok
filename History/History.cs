@@ -13,10 +13,6 @@ namespace HistoryCollections
 
         private bool hasUndon = false;
 
-
-
-
-
         public History(int size)
         {
             this.size = size;
